@@ -17,8 +17,6 @@ class CreateTablePictures extends Migration
             $table->increments('id')->default(0);
             $table->string('pic_url');
             $table->string('description');
-            $table->tinyInteger('target_id');
-            $table->string('target_type');
             $table->timestamps();
         });
     }

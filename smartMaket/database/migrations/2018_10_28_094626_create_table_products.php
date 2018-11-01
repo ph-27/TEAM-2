@@ -17,6 +17,7 @@ class CreateTableProduct extends Migration
             $table->increments('id');
             $table->foreign('category_id')->references(‘category_id’)->on(‘categories’);
             $table->string('product_name');
+            $table->int('pic_id');
             $table->integer('unit_price');
             $table->datetime('imported_date');
             $table->datetime('expir_date');
