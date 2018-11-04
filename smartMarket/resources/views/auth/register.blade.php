@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -61,6 +65,59 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('user.phone') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
+
+                                @if ($errors->has('phone'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('user.address') }}</label>
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required>
+                              @if ($errors->has('address'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('user.birthday') }}</label>
+                            <div class="col-md-6 date">
+                                <input id="birthday" type="text" class="form-control{{ $errors->has('birthday') ? ' is-invalid' : '' }}" name="birthday" value="{{ old('birthday') }}" required>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                              
+                                @if ($errors->has('birthday'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('birthday') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="input-group input-daterange">
+                                <input type="text" class="form-control" value="2012-04-05">
+                                <div class="input-group-addon">to</div>
+                                <input type="text" class="form-control" value="2012-04-19">
+                            </div>
+                        </div>
+
+                        
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -74,4 +131,16 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript" src="{{ asset('js/vendor.js') }}"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+{{-- 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#birthday").datetimepicker();
+    });
+</script> --}}
+
 @endsection
