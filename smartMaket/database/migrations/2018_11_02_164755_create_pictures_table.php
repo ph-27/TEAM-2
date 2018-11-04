@@ -4,23 +4,24 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePictures extends Migration
+class CreatePicturesTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+      public function up()
     {
         Schema::create('pictures', function (Blueprint $table){
-            $table->increments('id')->default(0);
+            $table->increments('id');
             $table->string('pic_url');
             $table->string('description');
+            $table->integer('target_id');
+            $table->string('target_type');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

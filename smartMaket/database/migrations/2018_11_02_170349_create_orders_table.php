@@ -15,13 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('address',255);
             $table->integer('phone');
             $table->decimal('ship_fee')->nullable();
             $table->string('discount',100)->nullable();
-            $table->tinyInteger('pay_method')->default(1);
+            $table->tinyInteger('pay_method');
             $table->tinyInteger('status');
             $table->decimal('unit_price',10,2);
             $table->decimal('total_amount');
@@ -36,5 +37,6 @@ class CreateOrdersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('orders');
-    }
+      
+}
 }

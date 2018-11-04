@@ -4,25 +4,28 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableOrderProduct extends Migration
+class CreateOrderProductsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+   public function up()
     {
         //
-        Schema::create('order_product', function (Blueprint $table){
+        Schema::create('order_products', function (Blueprint $table){
             $table->increments('id');
-            $table->foreign('order_id')->references(‘order_id’)->on(‘orders’);
+            $table->integer('order_id')->unsigned()->nullable();
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->datetime('order_date');
-            $table->foreign('product_name',100)->references(‘product_name’)->on(‘products’);
-            $table->integer('product_id');
+            $table->string('product_name',100);
+            $table->integer('product_id')->unsigned()->nullable();
+            $table->foreign('product_id')->references('id')->on('products');
             $table->decimal('unit_price',10,2);
             $table->integer('quantity');
-            $table->integer('promotion_id')->nullable();
+            $table->integer('promotion_id')->unsigned()->nullable();
+            $table->foreign('promotion_id')->references('id')->on('promotions');
             $table->decimal('total_amount');
             $table->timestamps();
         });

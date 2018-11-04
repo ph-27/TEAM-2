@@ -1,10 +1,10 @@
-ugj<?php
+<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableCategories extends Migration
+class CreatePromotionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateTableCategories extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table){
-            $table->increments('category_id');
+        Schema::create('promotions', function (Blueprint $table){
+            $table->increments('id');
             $table->string('name');
-            $table->integer('target_id');
-            $table->tinyInteger('target_type');
-            $table->timestamps();
+            $table->datetime('date_start');
+            $table->datetime('date_end');
+            $table->integer('promo_value');
         });
     }
-                  
-    /**/
-
+    
     /**
      * Reverse the migrations.
      *
@@ -31,6 +29,6 @@ class CreateTableCategories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('promotions');
     }
 }
