@@ -16,19 +16,17 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table){
             $table->increments('id');
             $table->integer('category_id')->unsigned()->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
             $table->string('product_name');
-            $table->integer('pic_id');
+            $table->string('picture');
             $table->integer('unit_price');
-            $table->datetime('imported_date');
-            $table->datetime('expir_date');
-            $table->string('orgin',50);
+            $table->date('imported_date');
+            $table->date('expired_date');
+            $table->string('origin',50);
             $table->integer('imp_quantity');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->integer('in_stock');
             $table->integer('promotion_id')->unsigned()->nullable();
-            $table->foreign('promotion_id')->references('id')->on('promotions');
-            $table->tinyInteger('type'); 
+            $table->integer('type'); 
             $table->string('slug',255); 
             $table->timestamps();       
         });
