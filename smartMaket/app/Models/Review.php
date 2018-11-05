@@ -1,12 +1,21 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-     public function products(){
-    	return $this->hasMany('App\Product','category_id','id');
-}
+    protected $fillable = [
+        'user_id',
+        'product_id',
+        'date_review',
+        'rank',
+        'detail'
+    ];
+
+    public function products()
+    {
+    	return $this->hasMany(Product::class);
+	}
 }

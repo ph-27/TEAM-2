@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -16,7 +16,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'role',
+        'avatar',
+        'email_verified_at',
+        'birthday',
     ];
 
     /**
@@ -27,7 +33,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-     public function orders(){
-        return $this->hasMany('App\Order','order_id','id');
-}
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class,'order_id','id');
+    }
 }

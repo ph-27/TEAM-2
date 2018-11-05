@@ -11,10 +11,23 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');*/
+View::composer('partials.form.product',function($view){
+	$view->categories = \App\Models\Category::pluck('name','id');
+});
+Route::get('/', function () {
+    return redirect('categories');
+});
+Route::resource('categories', 'CategoryController');
+Route::resource('products', 'ProductController');
+Route::get('/products/categories/{name}', [
+    'uses' => 'ProductController@category',
+    'as' => 'products.category',
+    
+]);
