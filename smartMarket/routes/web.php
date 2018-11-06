@@ -17,4 +17,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', function () {
+    return view('pages.users.index');
+})->name('home');
+
+Route::get('/product/detail', function () {
+    return view('pages.users.product.detail');
+})->name('product.detail');
+
+Route::get('/order/index', function () {
+    
+    return view('pages.users.order.index');
+})->name('order.index');
+
+
+Route::post('register',[
+    'as' => 'register',
+    'users' =>'userController@postregister'
+
+]);

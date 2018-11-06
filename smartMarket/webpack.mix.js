@@ -11,13 +11,27 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.babel([
-    'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/bootstrap/dist/js/bootstrap.min.js',
-    'node_modules/jquery-ui/ui/widgets/datepicker.js',
-    'node_modules/jquery-ui/ui/i18n/datepicker-ja.js',
-    'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
-], 'public/js/vendor.js')
-.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .copyDirectory('resources/images', 'public/images');
+const SCSS_PATH = 'resources/sass/';
+const FRONTEND_PATH = 'public/css';
+
+mix.js('resources/js/app.js', 'public/js')
+  .js('resources/js/main.js', 'public/js')
+  .js('resources/js/map-custom.js', 'public/js')
+  .js('resources/js/slick-custom.js', 'public/js')
+  .sass('resources/sass/app.scss', 'public/css')
+  .sass(SCSS_PATH + 'main.scss', FRONTEND_PATH)
+  .sass(SCSS_PATH + 'util.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'bootstrap-grid.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'bootstrap.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'custom.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'daterangepicker.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'hamburgers.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'lightbox.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'main.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'select2.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'slick/slick-theme.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'slick/slick.scss', FRONTEND_PATH)
+  // .sass(SCSS_PATH + 'util.scss', FRONTEND_PATH)
+  .copyDirectory('resources/fonts', 'public/fonts')
+  .copyDirectory('resources/vendor', 'public/vendor')
+  .copyDirectory('resources/images', 'public/images');

@@ -91,33 +91,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('user.birthday') }}</label>
-                            <div class="col-md-6 date">
-                                <input id="birthday" type="text" class="form-control{{ $errors->has('birthday') ? ' is-invalid' : '' }}" name="birthday" value="{{ old('birthday') }}" required>
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-th"></span>
-                                </div>
-                              
-                                @if ($errors->has('birthday'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('birthday') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-
-                            <div class="input-group input-daterange">
-                                <input type="text" class="form-control" value="2012-04-05">
-                                <div class="input-group-addon">to</div>
-                                <input type="text" class="form-control" value="2012-04-19">
-                            </div>
-                        </div>
-
-                        
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -135,7 +108,7 @@
 
 @section('js')
 <script type="text/javascript" src="{{ asset('js/vendor.js') }}"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script> --}}
 {{-- 
 <script type="text/javascript">
     $(document).ready(function(){

@@ -11,7 +11,7 @@ class CreateReviewsTable extends Migration
      *
      * @return void
      */
-     public function up()
+    public function up()
     {
         Schema::create('reviews', function (Blueprint $table){
             $table->increments('id');
@@ -25,6 +25,7 @@ class CreateReviewsTable extends Migration
             $table->timestamps();
         });
     }
+    
     /**
      * Reverse the migrations.
      *

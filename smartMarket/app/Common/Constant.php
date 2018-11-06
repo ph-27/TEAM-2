@@ -8,5 +8,5 @@ class Constant
 
     const IS_ADMIN = 1;
 
-    const IS_STAFF =2;
+    const IS_STAFF = 2;
 }

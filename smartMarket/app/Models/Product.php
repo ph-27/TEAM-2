@@ -20,18 +20,23 @@ class Product extends Model
         'type',
         
     ];
-    public function category(){
-    	// return $this->belongsTo('App\Category','category_id', 'id');
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
-     public function orders(){
-    	return $this->belongsToMany(Order::class);
-	}
-	public function promotion(){
-    	return $this -> belongsTo(Promotion::class,'promotion_id','id');
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class)
+            ->withPivot('product_name','unit_price', 'quantity', 'promotion_id', 'total_amount');
     }
-    public function review(){
-    	return $this -> belongsTo(Review::class,'review_id','id');
+    public function promotion()
+    {
+    	return $this->belongsTo(Promotion::class, 'promotion_id', 'id');
     }
- 
+    // One product have many reviews
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
+
