@@ -1,4 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/main.css": "/css/main.css",
+    "/css/util.css": "/css/util.css",
+    "/js/slick-custom.js": "/js/slick-custom.js",
+    "/js/map-custom.js": "/js/map-custom.js",
+    "/js/main.js": "/js/main.js"
 }

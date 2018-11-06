@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('title', 'Register')
+
+@section('css')
+
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -40,6 +46,21 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="email-confirmation" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Verified') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email-confirmation" type="email" class="form-control{{ $errors->has('email_confirmation') ? ' is-invalid' : '' }}"
+                                    name="email_confirmation" value="{{ old('email_confirmation') }}" required>
+
+                                @if ($errors->has('email_confirmation'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -61,6 +82,22 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Day Of Birth') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="birthday" type="text" class="form-control{{ $errors->has('birthday') ? ' is-invalid' : '' }}"
+                                    name="birthday" value="{{ old('birthday') }}" required>
+
+
+                                @if ($errors->has('birthday'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('birthday') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -74,4 +111,13 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+
+    $('#birthday').datepicker({
+        uiLibrary: 'bootstrap4'
+    });
+</script>
 @endsection
