@@ -7,8 +7,8 @@
 @endsection
 
 @section('content')
-    {{-- Include slide --}}
-    @include('common.slide')
+     {{-- Include slide --}}
+     {{-- @include('common.slide') --}}
     {{-- End include slide --}}
 
     <!-- New Product -->
@@ -16,8 +16,8 @@
 		<div class="container">
 			<div class="sec-title p-b-60">
 				<h3 class="m-text5 t-center">
-					Featured Products
-				</h3>
+					SẢN PHẨM MỚI TRONG NGÀY
+			    </h3>
 			</div>
 
 			<!-- Slide2 -->
@@ -34,7 +34,7 @@
                             <!-- Block2 -->
                             <div class="block2">
                                 <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                                    <img src="images/item-02.jpg" alt="IMG-PRODUCT">
+                                    <img src="{{ asset('images/giacam_dui_ga.jpg') }}" alt="IMG-PRODUCT">
 
                                     <div class="block2-overlay trans-0-4">
                                         <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -45,7 +45,63 @@
                                         <div class="block2-btn-addcart w-size1 trans-0-4">
                                             <!-- Button -->
                                             <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
+                                                THÊM VÀO GIỎ HÀNG
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="block2-txt p-t-20">
+                                    <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                        Đùi gà
+                                    </a>
+
+                                    <span class="block2-price m-text6 p-r-5">
+                                        150.000/ 1kg (VND)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+				</div>
+			</div>
+		</div>
+    </section>
+
+    <!-- New Product -->
+	<section class="newproduct bgwhite p-t-45 p-b-25">
+        <div class="container">
+                <div class="sec-title p-b-60">
+                        <h3 class="m-text5 t-center">
+                            RAU - CỦ - QUẢ
+                        </h3>
+                </div>
+            <!-- Slide2 -->
+            <div class="wrap-slick2">
+                <div class="slick2">
+                    @php
+                        $loop = [];
+                        for ($i = 0; $i < 10; $i++) {
+                            $loop[$i] = $i;
+                        }
+                    @endphp
+                    @foreach($loop as $product)
+                        <div class="item-slick2 p-l-15 p-r-15">
+                            <!-- Block2 -->
+                            <div class="block2">
+                                <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                    <img src=" {{ asset('images/bap_hat-nam-dong-co-tuoi.jpg') }}" alt="IMG-PRODUCT"> 
+
+                                    <div class="block2-overlay trans-0-4">
+                                        <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                            <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                            <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                        </a>
+
+                                        <div class="block2-btn-addcart w-size1 trans-0-4">
+                                            <!-- Button -->
+                                            <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                THÊM VÀO GIỎ HÀNG
                                             </button>
                                         </div>
                                     </div>
@@ -63,14 +119,19 @@
                             </div>
                         </div>
                     @endforeach
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
+        </div>
     </section>
-
+    
     <!-- New Product -->
 	<section class="newproduct bgwhite p-t-45 p-b-25">
         <div class="container">
+                <div class="sec-title p-b-60">
+                        <h3 class="m-text5 t-center">
+                           HẢI SẢN NƯỚC NGỌT
+                        </h3>
+                </div>
             <!-- Slide2 -->
             <div class="wrap-slick2">
                 <div class="slick2">
@@ -96,7 +157,7 @@
                                         <div class="block2-btn-addcart w-size1 trans-0-4">
                                             <!-- Button -->
                                             <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
+                                                THÊM VÀO GIỎ HÀNG
                                             </button>
                                         </div>
                                     </div>
@@ -119,8 +180,344 @@
         </div>
     </section>
 
+    <!-- Product -->
+	<section class="newproduct bgwhite p-t-45 p-b-25">
+        <div class="container">
+                <div class="sec-title p-b-60">
+                        <h3 class="m-text5 t-center">
+                           HẢI SẢN NƯỚC MẶN
+                        </h3>
+                </div>
+            <!-- Slide2 -->
+            <div class="wrap-slick2">
+                <div class="slick2">
+                    @php
+                        $loop = [];
+                        for ($i = 0; $i < 10; $i++) {
+                            $loop[$i] = $i;
+                        }
+                    @endphp
+                    @foreach($loop as $product)
+                        <div class="item-slick2 p-l-15 p-r-15">
+                            <!-- Block2 -->
+                            <div class="block2">
+                                <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                    <img src="images/item-02.jpg" alt="IMG-PRODUCT">
+
+                                    <div class="block2-overlay trans-0-4">
+                                        <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                            <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                            <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                        </a>
+
+                                        <div class="block2-btn-addcart w-size1 trans-0-4">
+                                            <!-- Button -->
+                                            <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                THÊM VÀO GIỎ HÀNG
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="block2-txt p-t-20">
+                                    <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                        Herschel supply co 25l
+                                    </a>
+
+                                    <span class="block2-price m-text6 p-r-5">
+                                        $75.00
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product -->
+	<section class="newproduct bgwhite p-t-45 p-b-25">
+        <div class="container">
+                <div class="sec-title p-b-60">
+                        <h3 class="m-text5 t-center">
+                           GIA CẦM
+                        </h3>
+                </div>
+            <!-- Slide2 -->
+            <div class="wrap-slick2">
+                <div class="slick2">
+                    @php
+                        $loop = [];
+                        for ($i = 0; $i < 10; $i++) {
+                            $loop[$i] = $i;
+                        }
+                    @endphp
+                    @foreach($loop as $product)
+                        <div class="item-slick2 p-l-15 p-r-15">
+                            <!-- Block2 -->
+                            <div class="block2">
+                                <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                    <img src="images/item-02.jpg" alt="IMG-PRODUCT">
+
+                                    <div class="block2-overlay trans-0-4">
+                                        <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                            <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                            <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                        </a>
+
+                                        <div class="block2-btn-addcart w-size1 trans-0-4">
+                                            <!-- Button -->
+                                            <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                THÊM VÀO GIỎ HÀNG
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="block2-txt p-t-20">
+                                    <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                        Herschel supply co 25l
+                                    </a>
+
+                                    <span class="block2-price m-text6 p-r-5">
+                                        $75.00
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Product -->
+	<section class="newproduct bgwhite p-t-45 p-b-25">
+            <div class="container">
+                    <div class="sec-title p-b-60">
+                            <h3 class="m-text5 t-center">
+                               GIA SÚC
+                            </h3>
+                    </div>
+                <!-- Slide2 -->
+                <div class="wrap-slick2">
+                    <div class="slick2">
+                        @php
+                            $loop = [];
+                            for ($i = 0; $i < 10; $i++) {
+                                $loop[$i] = $i;
+                            }
+                        @endphp
+                        @foreach($loop as $product)
+                            <div class="item-slick2 p-l-15 p-r-15">
+                                <!-- Block2 -->
+                                <div class="block2">
+                                    <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                        <img src="images/item-02.jpg" alt="IMG-PRODUCT">
+    
+                                        <div class="block2-overlay trans-0-4">
+                                            <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                                <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                                <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                            </a>
+    
+                                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                                <!-- Button -->
+                                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                    THÊM VÀO GIỎ HÀNG
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="block2-txt p-t-20">
+                                        <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                            Herschel supply co 25l
+                                        </a>
+    
+                                        <span class="block2-price m-text6 p-r-5">
+                                            $75.00
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- Product -->
+	<section class="newproduct bgwhite p-t-45 p-b-25">
+            <div class="container">
+                    <div class="sec-title p-b-60">
+                            <h3 class="m-text5 t-center">
+                               ĐỒ KHÔ
+                            </h3>
+                    </div>
+                <!-- Slide2 -->
+                <div class="wrap-slick2">
+                    <div class="slick2">
+                        @php
+                            $loop = [];
+                            for ($i = 0; $i < 10; $i++) {
+                                $loop[$i] = $i;
+                            }
+                        @endphp
+                        @foreach($loop as $product)
+                            <div class="item-slick2 p-l-15 p-r-15">
+                                <!-- Block2 -->
+                                <div class="block2">
+                                    <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                        <img src="images/item-02.jpg" alt="IMG-PRODUCT">
+    
+                                        <div class="block2-overlay trans-0-4">
+                                            <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                                <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                                <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                            </a>
+    
+                                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                                <!-- Button -->
+                                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                    THÊM VÀO GIỎ HÀNG
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="block2-txt p-t-20">
+                                        <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                            Herschel supply co 25l
+                                        </a>
+    
+                                        <span class="block2-price m-text6 p-r-5">
+                                            $75.00
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product -->
+	<section class="newproduct bgwhite p-t-45 p-b-25">
+            <div class="container">
+                    <div class="sec-title p-b-60">
+                            <h3 class="m-text5 t-center">
+                               TRÁI CÂY
+                            </h3>
+                    </div>
+                <!-- Slide2 -->
+                <div class="wrap-slick2">
+                    <div class="slick2">
+                        @php
+                            $loop = [];
+                            for ($i = 0; $i < 10; $i++) {
+                                $loop[$i] = $i;
+                            }
+                        @endphp
+                        @foreach($loop as $product)
+                            <div class="item-slick2 p-l-15 p-r-15">
+                                <!-- Block2 -->
+                                <div class="block2">
+                                    <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                        <img src="images/item-02.jpg" alt="IMG-PRODUCT">
+    
+                                        <div class="block2-overlay trans-0-4">
+                                            <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                                <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                                <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                            </a>
+    
+                                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                                <!-- Button -->
+                                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                    THÊM VÀO GIỎ HÀNG
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="block2-txt p-t-20">
+                                        <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                            Herschel supply co 25l
+                                        </a>
+    
+                                        <span class="block2-price m-text6 p-r-5">
+                                            $75.00
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product -->
+	<section class="newproduct bgwhite p-t-45 p-b-25">
+            <div class="container">
+                    <div class="sec-title p-b-60">
+                            <h3 class="m-text5 t-center">
+                               GIA VỊ
+                            </h3>
+                    </div>
+                <!-- Slide2 -->
+                <div class="wrap-slick2">
+                    <div class="slick2">
+                        @php
+                            $loop = [];
+                            for ($i = 0; $i < 10; $i++) {
+                                $loop[$i] = $i;
+                            }
+                        @endphp
+                        @foreach($loop as $product)
+                            <div class="item-slick2 p-l-15 p-r-15">
+                                <!-- Block2 -->
+                                <div class="block2">
+                                    <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                        <img src="images/item-02.jpg" alt="IMG-PRODUCT">
+    
+                                        <div class="block2-overlay trans-0-4">
+                                            <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                                <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                                <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                            </a>
+    
+                                            <div class="block2-btn-addcart w-size1 trans-0-4">
+                                                <!-- Button -->
+                                                <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                    THÊM VÀO GIỎ HÀNG
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="block2-txt p-t-20">
+                                        <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                            Herschel supply co 25l
+                                        </a>
+    
+                                        <span class="block2-price m-text6 p-r-5">
+                                            $75.00
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+{{-- 
     <!-- Banner2 -->
-	<section class="banner2 bg5 p-t-55 p-b-55">
+<!-- 	<section class="banner2 bg5 p-t-55 p-b-55">
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
@@ -208,14 +605,14 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> --}}
+ -->
     <!-- Blog -->
 	<section class="blog bgwhite p-t-94 p-b-65">
         <div class="container">
             <div class="sec-title p-b-52">
                 <h3 class="m-text5 t-center">
-                    Our Blog
+                    CẢM NHẬN CỦA KHÁCH HÀNG
                 </h3>
             </div>
 
@@ -230,7 +627,7 @@
                         <div class="block3-txt p-t-14">
                             <h4 class="p-b-7">
                                 <a href="blog-detail.html" class="m-text11">
-                                    Black Friday Guide: Best Sales & Discount Codes
+                                    TextTextTextTextTextTextTextText
                                 </a>
                             </h4>
 
@@ -238,7 +635,7 @@
                             <span class="s-text6">on</span> <span class="s-text7">July 22, 2017</span>
 
                             <p class="s-text8 p-t-16">
-                                Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames
+                                TextTextTextTextTextTextTextText
                             </p>
                         </div>
                     </div>
@@ -254,7 +651,7 @@
                         <div class="block3-txt p-t-14">
                             <h4 class="p-b-7">
                                 <a href="blog-detail.html" class="m-text11">
-                                    The White Sneakers Nearly Every Fashion Girls Own
+                                    TextTextTextTextTextTextTextText
                                 </a>
                             </h4>
 
@@ -262,7 +659,7 @@
                             <span class="s-text6">on</span> <span class="s-text7">July 18, 2017</span>
 
                             <p class="s-text8 p-t-16">
-                                Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
+                                TextTextTextTextTextTextTextText
                             </p>
                         </div>
                     </div>
@@ -278,7 +675,7 @@
                         <div class="block3-txt p-t-14">
                             <h4 class="p-b-7">
                                 <a href="blog-detail.html" class="m-text11">
-                                    New York SS 2018 Street Style: Annina Mislin
+                                   TextTextTextTextTextTextTextText
                                 </a>
                             </h4>
 
@@ -286,7 +683,7 @@
                             <span class="s-text6">on</span> <span class="s-text7">July 2, 2017</span>
 
                             <p class="s-text8 p-t-16">
-                                Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed hendrerit ligula porttitor. Fusce sit amet maximus nunc
+                                TextTextTextTextTextTextTextText
                             </p>
                         </div>
                     </div>
@@ -300,31 +697,31 @@
         <div class="flex-w p-l-15 p-r-15">
             <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
                 <h4 class="m-text12 t-center">
-                    Free Delivery Worldwide
+                    MIỄN PHÍ GIAO HÀNG TRONG NHIỀU KHU VỰC
                 </h4>
 
                 <a href="#" class="s-text11 t-center">
-                    Click here for more info
+                    Nhấn để xem chi tiết.
                 </a>
             </div>
 
             <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
                 <h4 class="m-text12 t-center">
-                    30 Days Return
+                    MUA NHIỀU TÍCH ĐIỂM NHIỀU
                 </h4>
 
                 <span class="s-text11 t-center">
-                    Simply return it within 30 days for an exchange.
+                    Mỗi 10.000(VND) tích luỹ được 1 điểm. 1 điểm tương đương 1.000(VND) và điểm tích sẽ được sử dụng từ lần mua tiếp theo.
                 </span>
             </div>
 
             <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
                 <h4 class="m-text12 t-center">
-                    Store Opening
+                    THỜI GIAN HOẠT ĐỘNG
                 </h4>
 
                 <span class="s-text11 t-center">
-                    Shop open from Monday to Sunday
+                    Cửa hàng hoạt động từ 6:00 - 20:00 hằng ngày.
                 </span>
             </div>
         </div>

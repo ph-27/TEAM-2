@@ -2,12 +2,14 @@
     <div class="flex-w p-b-90">
         <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
         <h4 class="s-text12 p-b-30">
-            GET IN TOUCH
+            LIÊN HỆ
         </h4>
 
         <div>
             <p class="s-text7 w-size27">
-            Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+            Số điện thoại: (+84) 964-051-051<br>
+            FAX: 0511-3051-051<br>
+            Địa chỉ: 96 Lý Tự Trọng, Thanh Bình, Đà Nẵng, Việt Nam.
             </p>
 
             <div class="flex-m p-t-30">
@@ -20,7 +22,7 @@
         </div>
         </div>
 
-        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+        {{-- <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
         <h4 class="s-text12 p-b-30">
             Categories
         </h4>
@@ -50,7 +52,7 @@
             </a>
             </li>
         </ul>
-        </div>
+        </div> --}}
 
         <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
         <h4 class="s-text12 p-b-30">
@@ -60,57 +62,57 @@
         <ul>
             <li class="p-b-9">
             <a href="#" class="s-text7">
-                Search
+                TÌM KIẾM
             </a>
             </li>
 
             <li class="p-b-9">
             <a href="#" class="s-text7">
-                About Us
+                GIỚI THIỆU
             </a>
             </li>
 
             <li class="p-b-9">
             <a href="#" class="s-text7">
-                Contact Us
+                LIÊN HỆ
             </a>
             </li>
 
-            <li class="p-b-9">
+            {{-- <li class="p-b-9">
             <a href="#" class="s-text7">
-                Returns
+                QUAY LẠI ĐẦU TRANG
             </a>
-            </li>
+            </li> --}}
         </ul>
         </div>
 
         <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
         <h4 class="s-text12 p-b-30">
-            Help
+            HỖ TRỢ
         </h4>
 
         <ul>
             <li class="p-b-9">
             <a href="#" class="s-text7">
-                Track Order
+                CHAT VỚI NHÂN VIÊN
+            </a>
+            </li>
+
+            {{-- <li class="p-b-9">
+            <a href="#" class="s-text7">
+                Quay lại đầu trang
             </a>
             </li>
 
             <li class="p-b-9">
             <a href="#" class="s-text7">
-                Returns
+                Giao hàng
             </a>
-            </li>
+            </li> --}}
 
             <li class="p-b-9">
             <a href="#" class="s-text7">
-                Shipping
-            </a>
-            </li>
-
-            <li class="p-b-9">
-            <a href="#" class="s-text7">
-                FAQs
+                GỞI CÂU HỎI
             </a>
             </li>
         </ul>
@@ -159,8 +161,8 @@
         <img class="h-size2" src="{{ asset('images/discover.png') }}" alt="IMG-DISCOVER">
         </a>
 
-        <div class="t-center s-text8 p-t-20">
-        Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-        </div>
+        {{-- <div class="t-center s-text8 p-t-20">
+        Copyright © Cty TNHH Smart Market <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        </div> --}}
     </div>
 </footer>

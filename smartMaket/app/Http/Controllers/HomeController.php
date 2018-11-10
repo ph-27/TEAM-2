@@ -22,7 +22,9 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        //dd(Auth::user());
+        var_dump(\App\user::find(1)->is_admin);
         return view('home');
     }
 }

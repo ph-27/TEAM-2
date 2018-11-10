@@ -11,6 +11,6 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        /*factory(smart_market\Models\Product::class, 10)->create(); */
+        factory(App\Models\Product::class, 150) -> create();
     }
 }
