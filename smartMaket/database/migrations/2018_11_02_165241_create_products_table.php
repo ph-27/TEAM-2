@@ -26,7 +26,6 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('in_stock');
             $table->integer('promotion_id')->unsigned()->nullable();
-            $table->integer('type'); 
             $table->string('slug',255); 
             $table->timestamps();       
         });

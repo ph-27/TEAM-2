@@ -17,13 +17,13 @@
 
             <div class="topbar-child2">
                 <span class="topbar-email">
-                    fashe@example.com
+                    smartmarket@gmail.com
                 </span>
 
                 <div class="topbar-language rs1-select2">
                     <select class="selection-1" name="time">
-                        <option>USD</option>
-                        <option>EUR</option>
+                        <option>English</option>
+                        <option>Vietnamese</option>
                     </select>
                 </div>
 
@@ -98,14 +98,14 @@
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
                                 <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                    View Cart
+                                    Xem giỏ hàng
                                 </a>
                             </div>
 
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
                                 <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                    Check Out
+                                    Đăng xuất
                                 </a>
                             </div>
                         </div>
@@ -121,36 +121,44 @@
                 <nav class="menu">
                     <ul class="main_menu">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.html">TRANG CHỦ</a>
+
+                        </li>
+
+                        <li>
+                            <a href="product.html">SẢN PHẨM</a>
                             <ul class="sub_menu">
-                                <li><a href="index.html">Homepage V1</a></li>
-                                <li><a href="home-02.html">Homepage V2</a></li>
-                                <li><a href="home-03.html">Homepage V3</a></li>
+                                <li><a href="index.html"></a></li>
+                                <li><a href="http://localhost:8000/product/RauCuQua.blade.php">Rau - Củ - Quả</a></li>
+                                <li><a href="http://localhost:8000/product/HaiSanNuocNgot.blade.php">Hải sản nước ngọt</a></li>
+                                <li><a href="http://localhost:8000/product/HaiSanNuocMan.blade.php">Hải sản nước mặn</a></li>
+                                <li><a href="http://localhost:8000/product/GiaCam.blade.php">Gia cầm</a></li>
+                                <li><a href="http://localhost:8000/product/GiaSuc.blade.php">Gia súc</a></li>
+                                <li><a href="http://localhost:8000/product/GiaVi.blade.php">Gia vị</a></li>
+                                <li><a href="http://localhost:8000/product/RauCuQua.blade.php">Đồ khô</a></li>
+                                <li><a href="http://localhost:8000/product/TraiCay.blade.php">Trái cây</a></li>
+
                             </ul>
                         </li>
 
-                        <li>
-                            <a href="product.html">Shop</a>
-                        </li>
-
                         <li class="sale-noti">
-                            <a href="product.html">Sale</a>
+                            <a href="product.html">GIẢM GIÁ</a>
                         </li>
 
                         <li>
-                            <a href="cart.html">Features</a>
+                            <a href="cart.html">SẢN PHẨM MỚI</a>
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <a href="blog.html">Blog</a>
+                        </li> --}}
+
+                        <li>
+                            <a href="about.html">GIỚI THIỆU</a>
                         </li>
 
                         <li>
-                            <a href="about.html">About</a>
-                        </li>
-
-                        <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.html">LIÊN HỆ</a>
                         </li>
                     </ul>
                 </nav>

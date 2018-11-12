@@ -15,9 +15,12 @@
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes();// cai router do o day ma bi comment lai roi
 
 Route::get('/home', 'HomeController@index')->name('home');*/
+
+Auth::routes();
+
 View::composer('partials.form.product',function($view){
 	$view->categories = \App\Models\Category::pluck('name','id');
 });
@@ -43,3 +46,9 @@ Route::get('/product/detail', function () {
 Route::get('/order/index', function () {
     return view('pages.users.order.index');
 })->name('order.index');
+
+
+Route::post('register', [
+    'as' => 'register',
+	'uses' => 'Auth\RegisterController@postRegister' 
+]);

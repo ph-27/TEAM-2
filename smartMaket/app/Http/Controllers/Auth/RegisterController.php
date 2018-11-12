@@ -6,7 +6,10 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Common\Constant;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -46,13 +49,41 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function postRegister(Request $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+        $validator = Validator::make($data->all(),
+            [
+                'name' => 'required|string|max:255',
+                'phone' => 'required|numeric',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:8|confirmed',
+            ],
+            [
+                'phone.required' => 'Vui lòng nhập số điện thoại!',
+                'email.email' => 'Không đúng định dạng email!',
+                'email.unique' => 'Email này đã được sử dụng.',
+                'password.required' => 'Vui lòng nhập mâtk khẩu!',
+                'password.min' => 'Mật khẩu ít nhất có 8 kí tự.'
+            ]);
+
+        if ($validator->fails()) {
+            return redirect('register')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+
+        $user = new User();
+        $user -> name = $data -> name;
+        $user -> email = $data -> email;
+        $user -> address = $data -> address;
+        $user -> email = $data -> email;
+        $user -> phone = $data -> phone;
+        $user -> password = Hash::make($data -> password);
+        $user -> save();
+        return redirect('home') -> with('thanhcong','Tạo tài khoan thành công');
+
+
     }
 
     /**
@@ -61,12 +92,13 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
+    // protected function createUser(array $data)
+    // {
+    //     return User::create([
+    //         'name' => $data['name'],
+    //         'email' => $data['email'],
+    //         'password' => Hash::make($data['password']),
+    //         'role' => Constant::IS_USER
+    //     ]);
+    // }
 }
