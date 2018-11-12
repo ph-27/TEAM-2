@@ -6,7 +6,7 @@
 
 @endsection
 
-{{-- @include('common.head') --}}
+
 
 @section('content')
 <div class="container">

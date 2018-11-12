@@ -11,7 +11,8 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-    	 DB::table('categories')->insert([
+    	DB::table('categories')->truncate();
+    	DB::table('categories')->insert([
 			['id' => 1, 'name' => 'Rau, củ, quả'],
 			['id' => 2, 'name' => 'Hải sản nước ngọt'],
 			['id' => 3, 'name' => 'Hải sản nước mặn'],

@@ -50,5 +50,5 @@ Route::get('/order/index', function () {
 
 Route::post('register', [
     'as' => 'register',
-	'uses' => 'Auth\RegisterController@postRegister' //âuth/registeraControler ms dung
+	'uses' => 'Auth\RegisterController@postRegister' 
 ]);
