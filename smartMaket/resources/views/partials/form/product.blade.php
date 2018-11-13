@@ -84,7 +84,7 @@
 <div class="form-group">
     {!! Form::label('slug', 'Slug') !!}
     <div class="form-controls">
-        <input class="form-control" name="slug" type="text" value="{{ old('slug', isset($product) ? $product->slug : '') }}" id="type">
+        <input class="form-control" name="slug" type="text" value="{{ old('slug', isset($product) ? $product->slug : '') }}" id="slug">
     </div>
 </div>
 

@@ -6,6 +6,7 @@
     @else
        <h4> All products</h4>
     @endif
+    <a href="{{route('categories.index')}}">Back to overview</a>
     <a class="btn btn-primary pull-right" href="{{route('products.create')}}">Add new product</a>
     <div class="clearfix"></div>
 @endsection
@@ -36,4 +37,7 @@
             @endforeach
         </tbody>
     </table>
+    
+    
+    {!! $products->links() !!}
 @endsection

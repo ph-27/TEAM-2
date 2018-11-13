@@ -8,7 +8,9 @@ use App\Models\Product;
 class Category extends Model
 {
     protected $fillable = [
-        'name'
+        'name',
+        'picture',
+        'slug'
     ];
     
     public function products()

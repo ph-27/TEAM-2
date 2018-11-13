@@ -18,13 +18,12 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('name');
             $table->string('address',255);
-            $table->integer('phone');
+            $table->string('phone',12);
             $table->decimal('ship_fee')->nullable();
-            $table->string('discount',100)->nullable();
+            $table->string('discount',10)->nullable();
             $table->tinyInteger('pay_method');
             $table->tinyInteger('status');
-            $table->decimal('unit_price',10,2);
-            $table->decimal('total_amount');
+            $table->decimal('total_amount',10,2);
             $table->timestamps();
         });
     }
