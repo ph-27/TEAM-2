@@ -18,24 +18,27 @@
 Auth::routes();// cai router do o day ma bi comment lai roi
 
 Route::get('/home', 'HomeController@index')->name('home');*/
-
-Auth::routes();
-
-View::composer('partials.form.product',function($view){
+use App\Http\Reqests\ProductRequest;
+View::composer('partials.form.product',function($view)
+{
 	$view->categories = \App\Models\Category::pluck('name','id');
 });
-Route::get('/', function () {
+
+Route::get('/', function () 
+{
     return redirect('categories');
 });
 Route::resource('categories', 'CategoryController');
+
 Route::resource('products', 'ProductController');
+
 Route::get('/products/categories/{name}', [
     'uses' => 'ProductController@category',
     'as' => 'products.category',
-    
 ]);
 
-Route::get('/home', function () {
+Route::get('/home', function () 
+{
     return view('pages.users.index');
 })->name('home');
 
