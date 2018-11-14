@@ -11,3 +11,4 @@ class order_product extends Model
     return $this->hasMany('smartMaket/Orders','order_id','id');
     }
 }
+

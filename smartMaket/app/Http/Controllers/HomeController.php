@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
+// Include Model
 
 class HomeController extends Controller
 {
@@ -13,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth'); cái này có nghĩa là chị phải login ms được truy cập vào => e close nóp lại
     }
 
     /**
@@ -22,9 +25,19 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        //dd(Auth::user());
-        var_dump(\App\user::find(1)->is_admin);
-        return view('home');
+    {
+        //$product = new Product();
+
+        //$allProduct = $product->all();
+
+        // Step 1. new model category
+
+        $modelCategory = new Category();// chị nên đặt tên biến là $modelCategory hoặc $categỏy
+        // Step 2. Get all category by model
+        $allCategory = $modelCategory->all(); // dưới này chị mss đặt là allCategory hoặc categorries
+
+        return view('pages.users.index', [
+            'allCategory' => $allCategory
+        ]);
     }
 }

@@ -37,10 +37,7 @@ Route::get('/products/categories/{name}', [
     'as' => 'products.category',
 ]);
 
-Route::get('/home', function () 
-{
-    return view('pages.users.index');
-})->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/product/detail', function () {
     return view('pages.users.product.detail');
@@ -50,8 +47,13 @@ Route::get('/order/index', function () {
     return view('pages.users.order.index');
 })->name('order.index');
 
+Route::post('/order/index', 'CartController@delCart');
 
 Route::post('register', [
     'as' => 'register',
 	'uses' => 'Auth\RegisterController@postRegister' 
 ]);
+
+Route::get('demo', 'CartController@index');
+
+Route::get('demo/{id}', 'CartController@show');
