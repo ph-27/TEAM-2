@@ -15,10 +15,10 @@ class CreatePromotionsTable extends Migration
     {
         Schema::create('promotions', function (Blueprint $table){
             $table->increments('id');
-            $table->string('name');
+            $table->string('name',100);
             $table->datetime('date_start');
             $table->datetime('date_end');
-            $table->integer('promo_value');
+            $table->integer('value');
         });
     }
     

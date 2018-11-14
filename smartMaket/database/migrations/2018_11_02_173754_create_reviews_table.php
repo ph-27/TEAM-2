@@ -17,7 +17,6 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->integer('product_id')->unsigned()->nullable();
-            $table->datetime('date_review');
             $table->tinyInteger('rank');
             $table->text('detail');
             $table->timestamps();

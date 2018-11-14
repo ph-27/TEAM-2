@@ -29,7 +29,7 @@
     <p>Picture: {{$product->picture}}</p>
     <p>Unit_price: {{$product->unit_price}}</p>
     <p>Imported_date: {{$product->imported_date}}</p>
-    <p>Expired_date: {{$product->expir_date}}</p>
+    <p>Expired_date: {{$product->expired_date}}</p>
     <p>Origin: {{$product->origin}}</p>
     <p>Imported_quantity: {{$product->imp_quantity}}</p>
     <p>Description: {{$product->description}}</p>
