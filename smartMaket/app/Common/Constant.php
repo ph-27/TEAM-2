@@ -11,4 +11,8 @@ class Constant
     const IS_FEMALE = 1;
     const IS_NORMALMEMBER = 0;
     const IS_VIPMEMBER = 1;
+    const GRAM = 0;
+    const KG = 1;
+    const PACK = 2;
+    const CAN = 3;
 }

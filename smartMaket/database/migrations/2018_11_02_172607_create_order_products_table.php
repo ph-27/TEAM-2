@@ -22,6 +22,7 @@ class CreateOrderProductsTable extends Migration
             $table->integer('product_id')->unsigned()->nullable();
             $table->decimal('unit_price',10,2);
             $table->integer('quantity');
+            $table->integer('price');
             $table->integer('promotion_id')->unsigned()->nullable();
             $table->decimal('total_amount');
             $table->timestamps();
@@ -35,6 +36,6 @@ class CreateOrderProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_product');
+        Schema::dropIfExists('order_products');
     }
 }
