@@ -14,12 +14,12 @@ class CategoryController extends Controller
 	{
         $categories = Category::all();
         
-		return view('categories.index')->with('categories', $categories);
+		return view('admin.categories.index')->with('categories', $categories);
 	}
 
 	public function create()
     {
-        return view('categories.create');
+        return view('admin.categories.create');
     }
 
     public function store(CategoryRequest $request)
@@ -34,7 +34,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
-        return view('categories.edit', compact('category'));
+        return view('admin.categories.edit', compact('category'));
     }
 
     public function update(CategoryRequest $request, $id)
@@ -56,8 +56,10 @@ class CategoryController extends Controller
 
     public function show($id)
     {   
-        $products = Product::where('category_id', $id)->get();
+        $products = (new Product())
+        ->where('category_id', $id)->paginate(5);
+        //$products = Product::where('category_id', $id)->get();
 
-        return view('products.index')->with('products', $products);
+        return view('admin.products.index')->with('products', $products);
     }
 }
