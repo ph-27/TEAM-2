@@ -46,12 +46,14 @@ Route::get('/order/index', function ()
 {
     return view('pages.users.order.index');
 })->name('order.index');
-Route::get('/home', function () 
-{
-    return view('pages.users.index');
-})->name('home');
+
+Route::post('/order/index', 'CartController@delCart');
 
 Route::post('register', [
     'as' => 'register',
 	'uses' => 'Auth\RegisterController@postRegister' 
 ]);
+
+Route::get('demo', 'CartController@index');
+
+Route::get('demo/{id}', 'CartController@show');

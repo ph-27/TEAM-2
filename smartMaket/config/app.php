@@ -147,7 +147,10 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+<<<<<<< HEAD
         
+=======
+>>>>>>> master
 
         /*
          * Package Service Providers...
